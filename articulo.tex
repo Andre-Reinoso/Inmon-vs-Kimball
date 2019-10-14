@@ -152,7 +152,25 @@ El Datamart contiene información consolidada, se actualiza periódicamente.
 
  \item \textbf{Enfoque Inmon}
 
+Bill Inmon ve la necesidad de transferir la información de los diferentes OLTP (Sistemas Transaccionales) de las organizaciones a un lugar centralizado donde los datos puedan ser utilizados para el analisis (sería el CIF o Corporate Information Factory).\\
+
+Insiste ademas en que ha de tener las siguientes características:
+
+\textbf{Orientado a temas} Los datos en la base de datos están organizados de manera que todos los elementos de datos relativos al mismo evento u objeto del mundo real queden unidos entre sí.
+\\ \\
+\textbf{Integrado} La base de datos contiene los datos de todos los sistemas operacionales de la organización, y dichos datos deben ser consistentes.
+\\ \\
+\textbf{No volátil} La información no se modifica ni se elimina, una vez almacenado un dato, éste se convierte en información de sólo lectura, y se mantiene para futuras consultas.
+\\ \\
+\textbf{Variante en el tiempo} Los cambios producidos en los datos a lo largo del tiempo quedan registrados para que los informes que se puedan generar reflejen esas variaciones.
+\\ \\
+La información ha de estar a los máximos niveles de detalle. Los Dw departamentales o datamarts son tratados como subconjuntos de este Dw corporativo, que son construidos para cubrir las necesidades individuales de analisis de cada departamento, y siempre a partir de este Dw Central (del que también se pueden construir los ODS ( Operational Data Stores ) o similares).
+
+\includegraphics[width=7cm, height=5cm]{Imagenes/enfoque-inmon}
+
  \item \textbf{Enfoque Kimball}
+
+\includegraphics[width=7cm, height=5cm]{Imagenes/enfoque-kimball}
    
 \end{enumerate}
 
@@ -204,6 +222,8 @@ El Datamart contiene información consolidada, se actualiza periódicamente.
 \bibitem[2]{}
 \newblock Spotless. Exploring Data Warehouse and Data Quality, Reduperado de: web.archive.org
 
+\bibitem[3]{}
+\newblock I, Abramson, 20 IAS Inc. Data Warehouse: The Choice of Inmon versus Kimball
 
 \end{thebibliography}
 
