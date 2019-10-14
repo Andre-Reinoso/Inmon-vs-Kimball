@@ -168,10 +168,15 @@ La información ha de estar a los máximos niveles de detalle. Los Dw departamen
 
 \includegraphics[width=7cm, height=5cm]{Imagenes/enfoque-inmon}
 
- \item \textbf{Enfoque Kimball}
+El enfoque Inmon tambien se referencia normalmente como Top-down. Los datos son extraidos de los sistemas operacionales por los procesos ETL y cargados en las areas de stage, donde son validados y consolidados en el DW corporativo, donde ademas existen los llamados metadatos que documentan de una forma clara y precisa el contenido del DW. Una vez realizado este proceso, los procesos de refresco de los Data Mart departamentales obtienen la información de el, y con las consiguientes transformaciones, organizan los datos en las estructuras particulares requeridas por cada uno de ellos, refrescando su contenido.
 
+ \item \textbf{Enfoque Kimball}\\
+El Data Warehouse es un conglomerado de todos los Data Marts dentro de una empresa, siendo una copia de los datos transaccionales estructurados de una forma especial para el analisis, de acuerdo al Modelo Dimensional (no normalizado), que incluye, como ya vimos, las dimensiones de análisis y sus atributos, su organización jerarquica, asi como los diferentes hechos de negocio que se quieren analizar. Por un lado tenemos tablas para las representar las dimensiones y por otro lado tablas para los hechos (las facts tables).
+\\ \\
+Los diferentes Data Marts estan conectados entre si por la llamada bus structure, que contiene los elementos anteriormente citados a traves de las dimensiones conformadas (que permiten que los usuarios puedan realizar querys conjuntos sobre los diferentes data marts, pues este bus contiene los elementos en común que los comunican). Una dimensión conformada puede ser, por ejemplo, la dimensión cliente, que incluye todos los atributos o elementos de analisis referentes a los clientes y que puede ser compartida por diferentes data marts (ventas, pedidos, gestión de cobros, etc).
 \includegraphics[width=7cm, height=5cm]{Imagenes/enfoque-kimball}
-   
+\\
+   Este enfoque también se referencia como Bottom-up, pues al final el Datawarehouse Corporativo no es mas que la unión de los diferentes datamarts, que estan estructurados de una forma común a través de la bus structure. Esta caracteristica le hace mas flexible y sencillo de implementar, pues podemos construir un Data Mart como primer elemento del sistema de análisis, y luego ir añadiendo otros que comparten las dimensiones ya definidas o incluyen otras nuevas. En este sistema, los procesos ETL extraen la información de los sistemas operacionales y los procesan igualmente en el area stage, realizando posteriormente el llenado de cada uno de los Data Mart de una forma individual, aunque siempre respetando la estandarizacion de las dimensiones (dimensiones conformadas).
 \end{enumerate}
 
 
