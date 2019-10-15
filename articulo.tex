@@ -177,6 +177,16 @@ Los diferentes Data Marts estan conectados entre si por la llamada bus structure
 \includegraphics[width=7cm, height=5cm]{Imagenes/enfoque-kimball}
 \\
    Este enfoque también se referencia como Bottom-up, pues al final el Datawarehouse Corporativo no es mas que la unión de los diferentes datamarts, que estan estructurados de una forma común a través de la bus structure. Esta caracteristica le hace mas flexible y sencillo de implementar, pues podemos construir un Data Mart como primer elemento del sistema de análisis, y luego ir añadiendo otros que comparten las dimensiones ya definidas o incluyen otras nuevas. En este sistema, los procesos ETL extraen la información de los sistemas operacionales y los procesan igualmente en el area stage, realizando posteriormente el llenado de cada uno de los Data Mart de una forma individual, aunque siempre respetando la estandarizacion de las dimensiones (dimensiones conformadas).
+
+ \item \textbf{Ciclo de Vida Kimball}\\
+Este ciclo de vida del proyecto de DW, está basado en cuatro principios básicos:\\ \\
+\textbf{Centrarse en el negocio:} Hay que concentrarse en la identificación de los requerimientos del negocio y su valor asociado, y usar estos esfuerzos para desarrollar relaciones sólidas con el negocio, agudizando el análisis del mismo y la competencia consultiva de los implementadores. \\ \\
+\textbf{Construir una infraestructura de información adecuada:} Diseñar una base de información única, integrada, fácil de usar, de alto rendimiento donde se reflejará la amplia gama de requerimientos de negocio identificados en la empresa. \\ \\
+\textbf{Realizar entregas en incrementos significativos:} Crear el almacén de datos (DW) en incrementos entregables en plazos de 6 a 12 meses. Hay que usa el valor de negocio de cada elemento identificado para determinar el orden de aplicación de los incrementos.\\ \\
+\textbf{Ofrecer la solución completa:} proporcionar todos los elementos necesarios para entregar valor a los usuarios de negocios. Para comenzar, esto significa tener un almacén de datos sólido, bien diseñado, con calidad probada, y accesible. \\ \\
+
+\includegraphics[width=7cm, height=5cm]{Imagenes/ciclodevidakimball}
+
 \end{enumerate}
 
 
