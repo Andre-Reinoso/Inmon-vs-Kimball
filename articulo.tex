@@ -187,6 +187,44 @@ Este ciclo de vida del proyecto de DW, está basado en cuatro principios básico
 
 \includegraphics[width=7cm, height=5cm]{Imagenes/ciclodevidakimball}
 
+
+
+
+ \item \textbf{Linea de Datos}\\
+El seguimiento de datos comienza con el diseño de un modelo dimensional objetivo para abordar los requisitos comerciales, mientras se consideran las realidades de datos subyacentes. El modelo dimensional se convierte en un diseño físico donde se consideran las estrategias de ajuste de rendimiento, luego se abordan los desafíos de diseño y desarrollo del sistema ETL.\\ \\
+\textbf{Modelo dimensional:} es un proceso dinámico y altamente iterativo. Consiste de cuatro pasos:
+\begin{itemize}
+	\item Elegir el proceso de negocio: El primer paso es elegir el área a modelizar. Esta es una decisión de la dirección, y depende fundamentalmente del análisis de requerimientos y de los temas analíticos anotados en la etapa anterior. 
+	\item Establecer el nivel de granularidad: La granularidad significa especificar el nivel de detalle. La elección de la granularidad depende de los requerimientos del negocio y lo que es posible a partir de los datos actuales.
+	\item Elegir las dimensiones: Las dimensiones surgen naturalmente de las discusiones del equipo, y facilitadas por la elección del nivel de granularidad y de la matriz de procesos/dimensiones. Una forma de identificar las tablas de dimensiones es que sus atributos
+son posibles candidatos para ser encabezado en los informes, tablas pivot, cubos, o cualquier forma de visualización, unidimensional o
+multidimensional.
+	\item Identificar medidas y tablas de hechos: El último paso consiste en identificar las medidas que surgen de
+los procesos de negocios. Una medida es un atributo (campo) de una tabla que se desea analizar, sumarizando o agrupando sus datos,
+usando los criterios de corte conocidos como dimensiones.
+	\item Para concluir con el proceso dimensional inicial se realiza un gráfico denominado modelo dimensional de alto nivel (o gráfico de burbujas, Bubble chart, en el léxico de Kimball)
+\includegraphics[width=8cm, height=6cm]{Imagenes/2}
+\end{itemize}
+\textbf{Modelo fisico:} En esta parte, intentamos contestar las siguientes preguntas: 
+\begin{itemize}
+	\item ¿Cómo puede determinar cuán grande será el sistema de DW/BI? 
+	\item ¿Cuáles son los factores de uso que llevarán a una configuración más grande y más compleja? 
+	\item ¿Cómo se debe configurar el sistema? 
+	\item ¿Cuánta memoria y servidores se necesitan? ¿Qué tipo de almacenamiento y procesadores?
+	\item ¿Cómo instalar el software en los servidores de desarrollo, prueba
+y producción?
+	\item ¿Qué necesitan instalar los diferentes miembros del equipo de
+DW/BI en sus estaciones de trabajo?
+	\item ¿Cómo convertir el modelo de datos lógico en un modelo de datos
+físicos en la base de datos relacional?
+	\item ¿Cómo conseguir un plan de indexación inicial?
+	\item ¿Debe usarse la partición en las tablas relacionales?
+\end{itemize}
+\textbf{ETL:} El sistema de Extracción, Transformación y Carga (ETL) es la base sobre la cual se alimenta el Datawarehouse. Si el sistema ETL se diseña adecuadamente, puede extraer los datos de los sistemas de origen de datos, aplicar diferentes reglas para aumentar la calidad y consistencia de los mismos, consolidar la información proveniente de distintos sistemas, y finalmente cargar (grabar) la información en el DW en un formato acorde para la utilización por parte de las herramientas de análisis. 
+
+ \item \textbf{Linea de Aplicación de BI}\\
+Mientras que algunos miembros del proyecto están inmersos en la tecnología y los datos, otros se centran en identificar y construir una amplia gama de aplicaciones de BI, incluidos informes estandarizados, consultas parametrizadas, paneles, cuadros de mandos, modelos analíticos, aplicaciones de minería de datos, junto con el interfaces de navegación asociadas.
+
 \end{enumerate}
 
 
@@ -239,6 +277,10 @@ Este ciclo de vida del proyecto de DW, está basado en cuatro principios básico
 
 \bibitem[3]{}
 \newblock I, Abramson, 20 IAS Inc. Data Warehouse: The Choice of Inmon versus Kimball
+
+\bibitem[4]{}
+\newblock Rivadera, G. La metodología de Kimball para el diseño de almacenes de
+datos (Data warehouses) 
 
 \end{thebibliography}
 
